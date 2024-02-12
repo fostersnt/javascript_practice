@@ -13,7 +13,9 @@
         align-items: center !important;
       }
       .btn {
-        margin: auto !important;
+        margin-top: 20px !important;
+        margin-left: auto;
+        margin-right: auto;
         width: 45% !important;
         padding: 20px !important;
         border: none;
@@ -64,7 +66,6 @@
         margin-top: 10px !important;
         padding-left: 5px;
         padding-right: 5px;
-        margin-bottom: 10px !important;
         border: 1px solid rgb(216, 209, 209) !important;
         border-radius: 10px !important;
         outline: none;
@@ -73,18 +74,31 @@
         color: rgb(105, 101, 101) !important;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       }
+      span{
+        margin-bottom: 10px !important;
+        color: red;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+      #success_message{
+        color: green;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <div id="form_container">
+        <div class="col-md-12">
+            <p id="success_message"></p>
+        </div>
         <div class="col-md-6">
             <label for="">Name</label><br>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name"><br>
+            <span><small id="name_error"></small></span>
         </div>
         <div class="col-md-6">
             <label for="">Address</label><br>
-            <input type="text" name="name" id="name">
+            <input type="text" name="address" id="address"><br>
+            <span><small id="address_error"></small></span>
         </div>
         <div class="col-md-6"></div>
         <div id="buttons_container">
@@ -95,17 +109,39 @@
     </div>
   </body>
   <script>
-    let element = document.querySelectorAll(".btn");
-    var ids = [];
-    element.forEach((item) => {
-      ids.push(item.id);
-      item.addEventListener("click", function () {
-        alert("ID: " + item.getAttribute("id"));
-      });
-    });
-    console.log(ids);
+    // let element = document.querySelectorAll(".btn");
+    // var ids = [];
+    // element.forEach((item) => {
+    //   ids.push(item.id);
+    //   item.addEventListener("click", function () {
+    //     alert("ID: " + item.getAttribute("id"));
+    //   });
+    // });
+    // console.log(ids);
     // element.addEventListener('click', function() {
     //     alert('You just clicked a button')
     // });
+    let element = document.querySelector('#first_btn');
+    let name_input = document.querySelector('#address');
+    let address_input = document.querySelector('#name');
+    element.addEventListener('click', function() {
+        if (name_input.value == '') {
+            document.querySelector('#name_error').innerHTML = 'Name cannot be empty';
+        }
+        if (address_input.value == '') {
+            document.querySelector('#address_error').innerHTML = 'Address cannot be empty';
+        }
+         else {
+            document.querySelector('#name_error').innerHTML = '';
+            document.querySelector('#address_error').innerHTML = '';
+
+            name_input.value = '';
+            address_input.value = '';
+
+            document.querySelector('#success_message').innerHTML = 'Your details has been submitted successfully';
+        }
+        console.log(name_input.value);
+        console.log(name_input.value);
+    })
   </script>
 </html>
