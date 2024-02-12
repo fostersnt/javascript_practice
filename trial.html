@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="click_me" id="abcd">CLICK TO SEE</button>
+    <button class="click_me" id="efgh">CLICK TO SEE</button>
+</body>
+<script>
+    let element = document.querySelectorAll('.click_me');
+    var ids = [];
+    element.forEach((item) => {
+        ids.push(item.id);
+    });
+    console.log(ids);
+    // element.addEventListener('click', function() {
+    //     alert('You just clicked a button')
+    // });
+</script>
+</html>
