@@ -1,6 +1,5 @@
-
-
 //Filters the given to select all the numbers that leaves a remainder of 0 when divided by 2
+
 function check_even(arr) {
    let result = arr.filter((a)=>{
         return a%2 == 0;

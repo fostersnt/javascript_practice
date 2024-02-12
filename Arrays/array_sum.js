@@ -1,4 +1,5 @@
-// const file_main = require('./array_sample.js')
+//This function adds all the elements in the given array
+
 function add_array_numbers(arr) {
   var sum_result = 0;
   for (let index = 0; index < arr.length; index++) {
