@@ -1,4 +1,5 @@
 //every(): tests whether all elements in the array pass the test implemented by the provided function
+//The every() function returns a bolean value of true or false
 
 let pass_mark = 1;
 function isPassMark(current_element) {
