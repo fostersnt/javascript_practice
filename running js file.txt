@@ -1,0 +1,1 @@
+To RUN or EXECUTE a JavaScript file, run node name_of_js_file.js
